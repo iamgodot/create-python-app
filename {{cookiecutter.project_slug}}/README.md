@@ -13,12 +13,12 @@ pip install {{cookiecutter.project_slug}}
 ## Usage
 
 ```
->>> from {{cookiecutter.project_slug}} import dict_substract
->>> dict_substract({}, {'a': 11})
+>>> from {{cookiecutter.project_slug}} import dict_subtract
+>>> dict_subtract({}, {'a': 11})
 {}
->>> dict_substract({'a': 12}, {'a': 11})
+>>> dict_subtract({'a': 12}, {'a': 11})
 {'a': 12}
->>> dict_substract({'a': 11, 'b': 0}, {'a': 11})
+>>> dict_subtract({'a': 11, 'b': 0}, {'a': 11})
 {'b': 0}
 ```
 

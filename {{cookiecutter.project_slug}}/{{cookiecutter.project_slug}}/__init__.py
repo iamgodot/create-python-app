@@ -1,6 +1,6 @@
-from .core import dict_substract
+from .core import dict_subtract
 
 
 __all__ = [
-    'dict_substract',
+    'dict_subtract',
 ]
