@@ -12,20 +12,10 @@ URL = 'https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.projec
 EMAIL = '{{cookiecutter.email}}'
 AUTHOR = '{{cookiecutter.author}}'
 REQUIRES_PYTHON = '>=3.6, <4'
-VERSION = None
 
 REQUIRED = []
 
 here = os.path.abspath(os.path.dirname(__file__))
-
-# Load the package's __version__.py module as a dictionary.
-about = {}
-
-if not VERSION:
-    with open(os.path.join(here, NAME, '__version__.py')) as f:
-        exec(f.read(), about)
-else:
-    about['__version__'] = VERSION
 
 # Get the long description from README.md
 with open(os.path.join(here, 'README.md')) as f:
@@ -33,7 +23,7 @@ with open(os.path.join(here, 'README.md')) as f:
 
 setup(
     name=NAME,
-    version=about['__version__'],
+    version='0.0.1',
     description=DESCRIPTION,
     long_description=long_description,
     long_description_content_type='text/markdown',
