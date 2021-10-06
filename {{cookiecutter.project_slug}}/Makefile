@@ -12,8 +12,8 @@ venv:
 	virtualenv --python=$(which python3) --prompt '<venv: $(REPO)>' venv
 
 install:
-	venv/bin/pip install -r requirements/dev.txt
-	venv/bin/pip install -e .
+	pip install -r requirements/dev.txt
+	pip install -e .
 
 clean:
 	find . -iname "*__pycache__" | xargs rm -rf
