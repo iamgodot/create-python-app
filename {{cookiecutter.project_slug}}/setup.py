@@ -40,7 +40,7 @@ setup(
     # },
     install_requires=REQUIRED,
     extras_require={
-        'dev': ['pytest', 'flake8'],
+        'dev': ['pytest', 'pytest-cov', 'flake8'],
     },
     include_package_data=True,
     # Specify files to be included in the package

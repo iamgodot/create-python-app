@@ -24,4 +24,4 @@ lint:
 	flake8 --format=pylint --count --exit-zero
 
 test: clean lint
-	py.test
+	pytest --cov={{cookiecutter.project_slug}} tests
