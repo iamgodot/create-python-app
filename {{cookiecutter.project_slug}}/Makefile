@@ -21,7 +21,7 @@ clean:
 	rm -rf .pytest_cache
 
 lint:
-	flake8 --format=pylint --count --exit-zero
+	flake8 --format=pylint --count
 
 test: clean lint
 	pytest --cov={{cookiecutter.project_slug}} tests
