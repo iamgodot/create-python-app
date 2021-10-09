@@ -1,6 +1,7 @@
 # Gen-pyckage
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![test](https://github.com/iamgodot/gen-pyckage/actions/workflows/test.yml/badge.svg)](https://github.com/iamgodot/gen-pyckage/actions/workflows/test.yml)
 
 Gen-pyckage is a python package template based on [cookiecutter](https://github.com/audreyr/cookiecutter).
 
