@@ -1,0 +1,26 @@
+name: test
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install cookiecutter
+        run: pip3 install cookiecutter
+      - name: Generate a package
+        run: cookiecutter --no-input $GITHUB_WORKSPACE -o /tmp
+      - name: Test generated package
+        working-directory: /tmp/dict_subtraction
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements/dev.txt
+          make test
