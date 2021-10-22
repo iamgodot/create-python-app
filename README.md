@@ -9,7 +9,6 @@ Gen-pyckage is a python package template based on [cookiecutter](https://github.
 
 - Instant use without further ado
 - Fulfilled Python package structure with
-  - Setup.py
   - Setup.cfg
   - MANIFEST.in
   - Pyproject.toml
@@ -46,7 +45,9 @@ make test
 
 ## Contributing
 
-Pull request s are welcome. For any questions or suggestions, please [open an issue](https://github.com/iamgodot/gen-pyckage/issues), thank you.
+Forks and pull requests are welcome.
+
+For any questions or suggestions, please [open an issue](https://github.com/iamgodot/gen-pyckage/issues), thank you.
 
 ## License
 
