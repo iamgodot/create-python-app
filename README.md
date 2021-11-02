@@ -13,7 +13,6 @@ Gen-pyckage is a python package template based on [cookiecutter](https://github.
   - MANIFEST.in
   - Pyproject.toml
   - And more.
-- Extra Pip indexes for faster installation
 - GitHub Workflow setup for Continuous Integration
 - Customization hooks for generating thanks to cookiecutter
 
