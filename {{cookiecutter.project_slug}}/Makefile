@@ -20,8 +20,19 @@ clean:
 	find . -iname "*.pyc" | xargs rm -rf
 	rm -rf .pytest_cache
 
+format:
+	black .
+
 lint:
 	flake8 --format=pylint --count
 
 test: clean lint
-	pytest --cov={{cookiecutter.project_slug}} tests
+	pytest -v --cov=src/{{cookiecutter.project_slug}} tests
+
+build:
+	rm -rf dist
+	python -m build
+
+release: build
+	pip install twine
+	twine upload dist/* --verbose
