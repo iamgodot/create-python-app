@@ -7,14 +7,13 @@ Gen-pyckage is a python package template based on [cookiecutter](https://github.
 
 ## Features
 
-- Instant use without further ado
+- Use right away, without broken pieces
 - Fulfilled Python package structure with
   - Setup.cfg
   - MANIFEST.in
   - Pyproject.toml
-  - And more.
-- GitHub Workflow setup for Continuous Integration
-- Customization hooks for generating thanks to cookiecutter
+- GitHub Actions workflows for CI/CD
+- Customizable hooks(from cookiecutter) for generating
 
 ## Inspired by
 
@@ -41,6 +40,8 @@ make install
 # Now everything is set, just test it out
 make test
 ```
+
+To use the `release` workflow, you have to add `PYPI_API_TOKEN` in repo secrets.
 
 ## Contributing
 
