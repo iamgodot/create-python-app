@@ -16,5 +16,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ "{{" }} matrix.python-version {{ "}}" }}
+      - uses: actions/cache@v2
+        with:
+          path: ${{ "{{" }} env.GITHUB_WORKSPACE {{ "}}" }}/.tox/py
+          key: ${{ "{{" }} runner.os {{ "}}" }}-tox-${{ "{{" }} hashFiles('requirements/prod.txt') {{ "}}" }}
       - run: pip install tox
       - run: tox -e py
