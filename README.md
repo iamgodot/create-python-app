@@ -26,7 +26,7 @@ Gen-pyckage is a python package template based on [cookiecutter](https://github.
 # Install cookiecutter
 pip3 install --user cookiecutter
 
-# Generate your project
+# Generate your project, just follow the prompts and fill out
 cookiecutter https://github.com/iamgodot/gen-pyckage
 
 # Let's say your project slug is greeting
