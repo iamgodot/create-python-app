@@ -1,6 +1,81 @@
-[build-system]
-requires = [
-    "setuptools>=47",
-    "wheel"
+[project]
+name = {{cookiecutter.project_slug}}
+dynamic = ["version"]
+description = {{cookiecutter.project_description}}
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+authors = [
+  {name = {{cookiecutter.author}}, email = {{cookiecutter.email}}}
 ]
+classifiers = [  # Optional
+  # How mature is this project? Common values are
+  #   3 - Alpha
+  #   4 - Beta
+  #   5 - Production/Stable
+  "Development Status :: 3 - Alpha",
+
+  # Indicate who your project is intended for
+  "Intended Audience :: Developers",
+  # "Topic :: Software Development :: Build Tools",
+
+  # Pick your license as you wish
+  "License :: OSI Approved :: MIT License",
+
+  # Specify the Python versions you support here. In particular, ensure
+  # that you indicate you support Python 3. These classifiers are *not*
+  # checked by "pip install". See instead "python_requires" below.
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [ # Optional
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "{{cookiecutter.project_slug}}.__version__"}
+
+[build-system]
+# These are the assumed default build requirements from pip:
+# https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
+requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["{{cookiecutter.project_slug}}", "tests"]
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.ruff]
+select = ["E", "F", "I"]
+exclude = [".git", ".tox", "venv", "build", "__pypackages__"]
+line-length = 88
+per-file-ignores = {"src/{{cookiecutter.project_slug}}/__init__.py" = ["F401"]}
+src = ["src", "tests"]
+
+[tool.ruff.isort]
+known-first-party = ["{{cookiecutter.project_slug}}"]
