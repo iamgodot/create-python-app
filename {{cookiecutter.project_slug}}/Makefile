@@ -12,11 +12,11 @@ clean: # Remove python cache&build results.
 	rm -rf dist
 
 lint: # Check linting via ruff.
-	ruff check .
+	pdm run ruff check .
 
 format: # Format code via black&ruff.
-	black .
-	ruff check --fix .
+	pdm run black .
+	pdm run ruff check --fix .
 
 test: clean lint # Clean, check lint and run tests.
-	pytest -v --cov=src/{{cookiecutter.project_slug}} tests
+	pdm run pytest -v --cov=src/{{cookiecutter.project_slug}} tests

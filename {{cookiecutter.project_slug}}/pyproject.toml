@@ -1,12 +1,12 @@
 [project]
-name = {{cookiecutter.project_slug}}
+name = "{{cookiecutter.project_slug}}"
 dynamic = ["version"]
-description = {{cookiecutter.project_description}}
+description = "{{cookiecutter.project_description}}"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
 authors = [
-  {name = {{cookiecutter.author}}, email = {{cookiecutter.email}}}
+  {name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}"}
 ]
 classifiers = [  # Optional
   # How mature is this project? Common values are
@@ -33,8 +33,7 @@ classifiers = [  # Optional
   "Programming Language :: Python :: 3.11",
 ]
 
-dependencies = [ # Optional
-]
+dependencies = []
 
 [tool.setuptools.dynamic]
 version = {attr = "{{cookiecutter.project_slug}}.__version__"}
@@ -72,7 +71,7 @@ exclude = '''
 
 [tool.ruff]
 select = ["E", "F", "I"]
-exclude = [".git", ".tox", "venv", "build", "__pypackages__"]
+exclude = [".git", ".tox", ".venv", "build", "__pypackages__"]
 line-length = 88
 per-file-ignores = {"src/{{cookiecutter.project_slug}}/__init__.py" = ["F401"]}
 src = ["src", "tests"]
