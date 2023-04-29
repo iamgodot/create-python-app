@@ -102,3 +102,7 @@ ENV/
 
 # pipenv
 Pipfile
+
+# pdm
+.pdm-python
+__pypackages__
