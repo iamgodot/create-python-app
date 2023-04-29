@@ -1,38 +1,22 @@
-REPO = '{{cookiecutter.project_slug}}'
+help: # Prints help for targets with comments
+	@cat $(MAKEFILE_LIST) | grep -E '^[a-zA-Z_-]+:.*?# .*$$' | awk 'BEGIN {FS = ":.*?# "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: help venv lint test clean
+install: # Install prod&dev dependencies via pdm.
+	pdm install --dev
 
-help:
-	@echo "Use 'make target' of which target is from the following:"
-	@echo "  venv		to create an virtual environment"
-	@echo "  install	to install via requirements.txt"
-	@echo "  test 		to test through all test cases"
-
-venv:
-	virtualenv --python=$(which python3) --prompt '<venv: $(REPO)>' venv
-
-install:
-	pip install -r requirements/dev.txt
-	pip install -e .
-
-clean:
+clean: # Remove python cache&build results.
 	find . -iname "*__pycache__" | xargs rm -rf
 	find . -iname "*.pyc" | xargs rm -rf
 	rm -rf .pytest_cache
-
-format:
-	black .
-
-lint:
-	flake8 --format=pylint --count
-
-test: clean lint
-	pytest -v --cov=src/{{cookiecutter.project_slug}} tests
-
-build:
+	rm -rf build
 	rm -rf dist
-	python -m build
 
-release: build
-	pip install twine
-	twine upload dist/* --verbose
+lint: # Check linting via ruff.
+	ruff check .
+
+format: # Format code via black&ruff.
+	black .
+	ruff check --fix .
+
+test: clean lint # Clean, check lint and run tests.
+	pytest -v --cov=src/{{cookiecutter.project_slug}} tests
