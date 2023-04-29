@@ -3,13 +3,13 @@ name: test
 on:
   push:
     branches:
-      - main
+      - master
     paths-ignore:
       - 'docs/**'
       - '*.md'
   pull_request:
     branches:
-      - main
+      - master
     paths-ignore:
       - 'docs/**'
       - '*.md'
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.10, 3.11]
+        python-version: [3.8, 3.9, '3.10', 3.11]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
@@ -32,4 +32,7 @@ jobs:
         run: cookiecutter --no-input $GITHUB_WORKSPACE -o /tmp
       - name: Test demo package
         working-directory: /tmp/dict_subtraction
-        run: make test
+        run: |
+          pip install pdm
+          make install
+          make test
