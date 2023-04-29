@@ -1,9 +1,9 @@
-# Gen-pyckage
+# Create Python App
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![test](https://github.com/iamgodot/gen-pyckage/actions/workflows/test.yml/badge.svg)](https://github.com/iamgodot/gen-pyckage/actions/workflows/test.yml)
+[![test](https://github.com/iamgodot/create-python-app/actions/workflows/test.yml/badge.svg)](https://github.com/iamgodot/create-python-app/actions/workflows/test.yml)
 
-Gen-pyckage is a python package template based on [cookiecutter](https://github.com/audreyr/cookiecutter).
+Create-python-app is a python package template based on [cookiecutter](https://github.com/audreyr/cookiecutter).
 
 ## Features
 
@@ -23,7 +23,7 @@ Gen-pyckage is a python package template based on [cookiecutter](https://github.
 pipx install cookiecutter
 
 # Generate your project, just follow the prompts and fill out
-cookiecutter https://github.com/iamgodot/gen-pyckage
+cookiecutter https://github.com/iamgodot/create-python-app
 
 # Let's say your project slug is greeting
 cd greeting
@@ -37,7 +37,7 @@ To use the `release` workflow, you have to add `PYPI_API_TOKEN` in repo secrets.
 
 ## Contributing
 
-For any questions or suggestions, please [open an issue](https://github.com/iamgodot/gen-pyckage/issues).
+For any questions or suggestions, please [open an issue](https://github.com/iamgodot/create-python-app/issues).
 
 ## License
 

@@ -24,7 +24,7 @@ pip install {{cookiecutter.project_slug}}
 
 ## Support
 
-python3.6+
+>=python3.8
 
 ## Changelog
 
@@ -36,4 +36,4 @@ python3.6+
 
 ## Credits
 
-This package was created with [cookiecutter](https://github.com/audreyr/cookiecutter) and [iamgodot/gen-pyckage](https://github.com/iamgodot/gen-pyckage) project template.
+This package was created with [cookiecutter](https://github.com/audreyr/cookiecutter) and [iamgodot/create-python-app](https://github.com/iamgodot/create-python-app) project template.
