@@ -9,6 +9,7 @@ Create-python-app is a python package template based on [cookiecutter](https://g
 
 - Integrate [pdm](https://github.com/pdm-project/pdm) for dependency management.
 - Proper github workflows setup.
+- Optional cli setup with click.
 - Delicate Makefile.
 
 ## Inspired by
